@@ -7,6 +7,8 @@ body {
     background: #eaebea;
 }
 
+
+/* ===== NAVBAR ===== */
 nav {
     height: 12vh;
     width: 100%;
@@ -44,3 +46,34 @@ h1 {
 .nav-right h2 {
     font-size: 2rem;
 }
+
+/* ===== BOOK AREA ===== */
+
+/* ===== FORM/MODAL ===== */
+.container {
+    position: relative;
+}
+
+.modal {
+    position: fixed;
+    background: white;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    visibility: hidden;
+}
+
+.overlay.show {
+    visibility: visible;
+}
+
+/* ===== MEDIA QUERIES ===== */
