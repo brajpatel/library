@@ -162,6 +162,16 @@ footer a {
     font-family: var(--overpass);
 }
 
+footer i {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.my-name:hover ~ i {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
 /* ===== FORM/MODAL ===== */
 .container {
     display: flex;
