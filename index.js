@@ -48,10 +48,11 @@ function createFillerBook() {
     ];
 
     let index = Math.floor(Math.random() * fillerBooks.length);
+    console.log(index)
     let randomTitle = fillerBooks[index].title;
     let randomAuthor = fillerBooks[index].author;
     let randomPages = fillerBooks[index].pages;
-    let randomReadStatus = Math.floor(Math.random() * 2)
+    let randomReadStatus = Math.floor(Math.random() * 2);
 
     const fillerBook = new Book(randomTitle, randomAuthor, randomPages, randomReadStatus);
 
@@ -104,9 +105,9 @@ function createCard(book) {
         cardReadStatus.textContent = 'Read'
     }
     else {
-        card.readStatus.textContent = 'Not read'
+        cardReadStatus.textContent = 'Not read'
     }
-    deleteCard.textContent = 'Remove book'
+    deleteCard.textContent = 'Remove Book'
 
     cardReadStatus.addEventListener('click', () => {
         if(cardReadStatus.textContent === 'Read') {
@@ -119,7 +120,6 @@ function createCard(book) {
 
     deleteCard.addEventListener('click', () => {
         removeBookFromLibrary(card, cardTitle);
-        updateLibrary();
     })
 
     card.appendChild(cardTitle);
@@ -140,6 +140,8 @@ function removeBookFromLibrary(book, bookTitle) {
     
     let index = library.indexOf(library.find(book => book.title === bookTitle));
     library.splice(index - 1, 1);
+
+    updateLibrary();
 }
 
 function updateLibrary() {
