@@ -7,9 +7,9 @@ const bookForm = document.getElementById('book-form')
 const confirmBook = document.getElementById('confirm-book')
 const overlay = document.getElementById('overlay');
 
-openForm.addEventListener('click', showForm)
-overlay.addEventListener('click', hideForm)
-confirmBook.addEventListener('click', getUserInput)
+openForm.addEventListener('click', showForm);
+overlay.addEventListener('click', hideForm);
+confirmBook.addEventListener('click', getUserInput);
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -19,12 +19,45 @@ function Book(title, author, pages, status) {
 }
 
 function createFillerBook() {
-    const fillerBook = new Book('Bing', 'Chilling', 699, true)
+    let fillerBooks = [
+        {
+            title: 'Skulduggery Pleasant',
+            author: 'Derek Landy',
+            pages: 384
+        },
+        {
+            title: 'Good Friday',
+            author: 'Lynda La Plante',
+            pages: 377
+        },
+        {
+            title: 'Crocodile Tears',
+            author: 'Anthony Horowitz',
+            pages: 432
+        },
+        {
+            title: 'Divine Madness',
+            author: 'Robert Muchamore',
+            pages: 368
+        },
+        {
+            title: 'Gone',
+            author: 'Michael Grant',
+            pages: 576
+        }
+    ];
+    let index;
+    let randomTitle = fillerBooks[index].title
+    let randomAuthor = fillerBooks[index].author
+    let randomPages = fillerBook[index].pages
+    let randomReadStatus = Math.floor(Math.random() * 2)
+
+    const fillerBook = new Book(randomTitle, randomAuthor, randomPages, randomReadStatus)
 
     library.push(fillerBook)
     createCard(fillerBook);
     updateLibrary();
-}
+};
 
 createFillerBook();
 
@@ -83,7 +116,7 @@ function createCard(book) {
     })
 
     deleteCard.addEventListener('click', () => {
-        removeBookFromLibrary(card, cardTitle)
+        removeBookFromLibrary(card, cardTitle);
         updateLibrary();
     })
 
@@ -91,20 +124,20 @@ function createCard(book) {
     card.appendChild(cardAuthor);
     card.appendChild(cardPages);
     card.appendChild(cardReadStatus);
-    card.appendChild(removeBook);
+    card.appendChild(deleteCard);
 
     addBookToLibrary(card);
 }
 
 function addBookToLibrary(book) {
-    bookArea.appendChild(book)
+    bookArea.appendChild(book);
 }
 
 function removeBookFromLibrary(book, bookTitle) {
-    bookArea.removeChild(book)
+    bookArea.removeChild(book);
     
-    let index = library.indexOf(library.find(book => book.title === bookTitle))
-    library.splice(index - 1, 1)
+    let index = library.indexOf(library.find(book => book.title === bookTitle));
+    library.splice(index - 1, 1);
 }
 
 function updateLibrary() {
