@@ -31,23 +31,37 @@ function getUserInput() {
         const newBook = new Book(titleInput, authorInput, pagesInput, readStatus);
 
         library.push(newBook);
-        createCard(newBook)
+        createCard(newBook);
 
-        bookForm.reset()
+        bookForm.reset();
 
         updateLibrary();
     }
 }
 
-function createCard() {
+function createCard(book) {
+    let card = document.createElement('div');
+    let cardTitle = document.createElement('h2');
+    let cardAuthor = document.createElement('h3');
+    let cardPages = document.createElement('h3');
+    let cardReadStatus = document.createElement('button');
+    let removeBook = document.createElement('button');
+    
 
+    card.appendChild(cardTitle);
+    card.appendChild(cardAuthor);
+    card.appendChild(cardPages);
+    card.appendChild(cardReadStatus);
+    card.appendChild(removeBook);
+
+    addBookToLibrary(card);
 }
 
-function addBookToLibrary() {
-
+function addBookToLibrary(book) {
+    bookArea.appendChild(book)
 }
 
-function removeBookFromLibrary() {
+function removeBookFromLibrary(book, bookTitle) {
 
 }
 
