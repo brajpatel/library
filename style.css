@@ -135,9 +135,10 @@ h1 {
 }
 
 /* ===== BOOK AREA ===== */
-.book-area {
-    height: 10vh;
+.card {
+    background: white;
 }
+
 
 /* ===== FOOTER ===== */
 footer {
