@@ -41,17 +41,18 @@ nav {
 }
 
 .filler-logo {
-    color: var(--off-white);
+    color: var(--neon-green);
     font-size: 1.4rem;
     font-family: var(--barlow);
     text-align: center;
-    border: 2px solid var(--off-white);
+    border: 2px solid var(--neon-green);
     height: 80%;
     width: 9.6vh;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
 }
 
 h1 {
