@@ -14,9 +14,14 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
-function defaultBook() {
+function createDefaultBook() {
+    const defaultBook = new Book('Bing', 'Chilling', 699, true)
 
+    createCard(defaultBook);
+    updateLibrary();
 }
+
+createDefaultBook();
 
 function getUserInput() {
     const titleInput = document.getElementById('input-title').value;
@@ -45,8 +50,32 @@ function createCard(book) {
     let cardAuthor = document.createElement('h3');
     let cardPages = document.createElement('h3');
     let cardReadStatus = document.createElement('button');
-    let removeBook = document.createElement('button');
+    let deleteCard = document.createElement('button');
     
+    cardTitle.textContent = book.title;
+    cardAuthor.textContent = book.author;
+    cardPages.textContent = book.pages + ' pages';
+    if(book.status) {
+        cardReadStatus.textContent = 'Read'
+    }
+    else {
+        card.readStatus.textContent = 'Not read'
+    }
+    deleteCard.textContent = 'Remove book'
+
+    cardReadStatus.addEventListener('click', () => {
+        if(cardReadStatus.textContent === 'Read') {
+            cardReadStatus.textContent = 'Not Read'
+        }
+        else {
+            cardReadStatus.textContent = 'Read'
+        }
+    })
+
+    deleteCard.addEventListener('click', () => {
+        removeBookFromLibrary(card, cardTitle)
+        updateLibrary();
+    })
 
     card.appendChild(cardTitle);
     card.appendChild(cardAuthor);
@@ -62,7 +91,10 @@ function addBookToLibrary(book) {
 }
 
 function removeBookFromLibrary(book, bookTitle) {
-
+    bookArea.removeChild(book)
+    
+    let index = library.indexOf(library.find(book => book.title === bookTitle))
+    library.splice(index - 1, 1)
 }
 
 function updateLibrary() {
