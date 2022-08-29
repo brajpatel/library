@@ -1,11 +1,15 @@
 let library = [];
 const librarySize = document.getElementById('library-size');
+const bookArea = document.getElementById('book-area');
 const openForm = document.getElementById('open-form');
 const modal = document.getElementById('modal');
 const bookForm = document.getElementById('book-form')
+const confirmBook = document.getElementById('confirm-book')
 const overlay = document.getElementById('overlay');
-const bookArea = document.getElementById('book-area');
 
+openForm.addEventListener('click', showForm)
+overlay.addEventListener('click', hideForm)
+confirmBook.addEventListener('click', getUserInput)
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -14,14 +18,15 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
-function createDefaultBook() {
-    const defaultBook = new Book('Bing', 'Chilling', 699, true)
+function createFillerBook() {
+    const fillerBook = new Book('Bing', 'Chilling', 699, true)
 
-    createCard(defaultBook);
+    library.push(fillerBook)
+    createCard(fillerBook);
     updateLibrary();
 }
 
-createDefaultBook();
+createFillerBook();
 
 function getUserInput() {
     const titleInput = document.getElementById('input-title').value;
@@ -51,6 +56,11 @@ function createCard(book) {
     let cardPages = document.createElement('h3');
     let cardReadStatus = document.createElement('button');
     let deleteCard = document.createElement('button');
+
+    card.classList.add('card')
+    cardTitle.classList.add('card-title')
+    cardReadStatus.classList.add('card-read-status')
+    deleteCard.classList.add('delete-card')
     
     cardTitle.textContent = book.title;
     cardAuthor.textContent = book.author;
@@ -102,13 +112,13 @@ function updateLibrary() {
 }
 
 // OPEN & CLOSE MODAL
-openForm.addEventListener('click', () => {
+function showForm() {
     modal.classList.add('show');
     overlay.classList.add('show');
-})
+}
 
-overlay.addEventListener('click', () => {
+function hideForm() {
     modal.classList.remove('show');
     overlay.classList.remove('show');
     bookForm.reset();
-})
+}
