@@ -46,16 +46,18 @@ function createFillerBook() {
             pages: 576
         }
     ];
-    let index;
-    let randomTitle = fillerBooks[index].title
-    let randomAuthor = fillerBooks[index].author
-    let randomPages = fillerBook[index].pages
+
+    let index = Math.floor(Math.random() * fillerBooks.length);
+    let randomTitle = fillerBooks[index].title;
+    let randomAuthor = fillerBooks[index].author;
+    let randomPages = fillerBooks[index].pages;
     let randomReadStatus = Math.floor(Math.random() * 2)
 
-    const fillerBook = new Book(randomTitle, randomAuthor, randomPages, randomReadStatus)
+    const fillerBook = new Book(randomTitle, randomAuthor, randomPages, randomReadStatus);
 
-    library.push(fillerBook)
+    library.push(fillerBook);
     createCard(fillerBook);
+
     updateLibrary();
 };
 
@@ -141,7 +143,7 @@ function removeBookFromLibrary(book, bookTitle) {
 }
 
 function updateLibrary() {
-    librarySize.textContent = library.length
+    librarySize.textContent = library.length;
 }
 
 // OPEN & CLOSE MODAL
