@@ -12,6 +12,7 @@
     --neon-green: rgb(0, 255, 110);
     --barlow: 'Barlow', sans-serif;
     --overpass: 'overpass', sans-serif;
+    --font-size: calc(15px + 0.390625vw);
 }
 
 body {
@@ -31,7 +32,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 6px black;
 }
 
 .nav-left,
@@ -61,7 +62,7 @@ nav {
 }
 
 .filler-logo i {
-    font-size: 3rem;
+    font-size: calc(2rem + 0.390625vw);
     transition: 0.6s ease;
     cursor: pointer;
 }
@@ -71,10 +72,11 @@ nav {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: calc(2.6rem + 0.390625vw);
     color: white;
     font-family: var(--overpass);
     margin-left: 2rem;
+    border-bottom: 4px solid white;
 }
 
 .nav-right,
@@ -83,16 +85,17 @@ h1 {
 }
 
 .nav-right h2 {
-    font-size: 2.2rem;
+    font-size: calc(1.8rem + 0.390625vw);
     color: white;
     font-family: var(--overpass);
+    padding-top: 5px;
 }
 
 .open-form {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 3px;
-    font-size: 1.5rem;
+    font-size: calc(16px + 0.390625vw);
     background: var(--neon-green);
     color: var(--dark-blue);
     border: 2px solid var(--neon-green);
@@ -132,9 +135,32 @@ h1 {
 }
 
 /* ===== BOOK AREA ===== */
+.book-area {
+    height: 10vh;
+}
 
+/* ===== FOOTER ===== */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: var(--dark-blue);
+    box-shadow: 0 0 6px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    width: 100%;
+    padding: 4px 0;
+}
 
+footer p {
+    color: white;
+}
 
+footer p,
+footer a {
+    font-family: var(--overpass);
+}
 
 /* ===== FORM/MODAL ===== */
 .container {
@@ -147,8 +173,8 @@ h1 {
     top: -20%;
     transform: translateY(-50%) scale(0.1);
     background: var(--dark-blue);
-    height: 500px;
-    width: 370px;
+    height: 520px;
+    width: 400px;
     border-radius: 5px;
     z-index: 1;
     visibility: hidden;
@@ -171,7 +197,7 @@ h1 {
 .modal h2 {
     color: var(--neon-green);
     font-family: var(--overpass);
-    font-size: 1.8rem;
+    font-size: calc(1.4rem + 0.390625vw);
 }
 
 form {
@@ -194,7 +220,7 @@ form {
     position: relative;
     height: 100%;
     padding: 16px;
-    font-size: 1.3rem;
+    font-size: calc(1.05rem + 0.390625vw);
     background: none;
     outline: none;
     border-radius: 3px;
@@ -205,9 +231,9 @@ form {
 
 .input-container label {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 20px;
-    font-size: 1.2rem;
+    font-size: calc(15px + 0.390625vw);
     text-transform: uppercase;
     color: var(--off-white);
     border-radius: 3px;
@@ -218,7 +244,7 @@ form {
 
 .input-container input:focus ~ label,
 .input-container input:valid ~ label {
-    top: -5px;
+    top: -8px;
     background: var(--neon-green);
     color: var(--dark-blue);
     padding: 1px 6px;
