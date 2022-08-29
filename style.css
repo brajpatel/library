@@ -248,7 +248,7 @@ form {
     background: var(--neon-green);
     color: var(--dark-blue);
     padding: 1px 6px;
-    font-size: 0.9rem;
+    font-size: calc(0.55rem + 0.390625vw);
     letter-spacing: 0.1ch;
 }
 
@@ -267,7 +267,7 @@ form {
 .last-input-container label {
     color: var(--off-white);
     font-family: var(--barlow);
-    font-size: 1.2rem;
+    font-size: calc(15px + 0.390625vw);
     text-transform: uppercase;
     margin-left: 10px;
     transition: 0.3s ease;
@@ -281,7 +281,7 @@ form {
     background: var(--neon-green);
     color: var(--dark-blue);
     padding: 5px 10px;
-    font-size: 1.4rem;
+    font-size: calc(1.15rem + 0.390625vw);
     cursor: pointer;
     font-family: var(--overpass);
     border: none;
