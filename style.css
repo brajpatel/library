@@ -95,7 +95,7 @@ nav {
 }
 
 h1 {
-    font-size: calc(2.6rem + 0.390625vw);
+    font-size: calc(2.4rem + 0.390625vw);
     color: white;
     font-family: var(--overpass);
     margin-left: 2rem;
@@ -108,7 +108,7 @@ h1 {
 }
 
 .nav-right h2 {
-    font-size: calc(1.8rem + 0.390625vw);
+    font-size: calc(1.75rem + 0.390625vw);
     color: white;
     font-family: var(--overpass);
     padding-top: 5px;
@@ -229,7 +229,7 @@ h1 {
     padding: 5px 10px;
     width: 30%;
     height: 40px;
-    font-size: calc(12px + 0.390625vw);
+    font-size: calc(14px + 0.390625vw);
     font-family: var(--barlow);
     transition: 0.3s ease;
     background: white;
@@ -502,3 +502,56 @@ footer i {
 }
 
 /* ===== MEDIA QUERIES ===== */
+@media(max-width: 1350px) {
+    .card-read-status {
+        width: 45%;
+        height: 40px;
+    }
+
+    .delete-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .filler-logo {
+        height: 70%;
+        width: 8.4vh;
+    }
+
+    .book-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-left {
+        margin-left: 1.5rem;
+    }
+
+    .nav-right {
+        margin-right: 1.5rem;
+    }
+
+    .book-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 770px) {
+    h1 {
+        margin-left: 1rem;
+    }
+
+    .nav-right h2 {
+        display: none;
+    }
+
+    .book-area {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 65%;
+    }
+}
