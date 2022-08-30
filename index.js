@@ -45,6 +45,21 @@ function createFillerBook() {
             title: 'Gone',
             author: 'Michael Grant',
             pages: 576
+        },
+        {
+            title: 'Mad Dogs',
+            author: 'Robert Muchamore',
+            pages: 398
+        },
+        {
+            title: 'Skeleton Key',
+            author: 'Anthony Horowitz',
+            pages: 324
+        },
+        {
+            title: 'Clariel',
+            author: 'Garth Nix',
+            pages: 416
         }
     ];
 
@@ -111,7 +126,7 @@ function createCard(book) {
         cardReadStatus.textContent = 'Not read'
         cardReadStatus.classList.add('not-read')
     }
-    deleteCard.textContent = 'Remove Book'
+    deleteCard.textContent = 'Remove'
 
     cardReadStatus.addEventListener('click', () => {
         if(cardReadStatus.textContent === 'Read') {
