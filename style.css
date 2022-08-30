@@ -36,6 +36,10 @@ body {
     padding-bottom: 3rem;
 }
 
+button {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: var(--neon-green);
@@ -109,7 +113,6 @@ h1 {
 }
 
 .open-form {
-    cursor: pointer;
     padding: 5px 10px;
     border-radius: 3px;
     font-size: calc(16px + 0.390625vw);
@@ -163,15 +166,52 @@ h1 {
 }
 
 .card {
-    background: white;
+    background: var(--dark-blue);
     height: 100%;
-    width: 90%;
+    width: 85%;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    /* STYLE MEEEEEEEEEEEEEEEEEEE */
+    gap: 20px;
+}
+
+.card-title {
+    color: white;
+    font-family: var(--overpass);
+    font-size: calc(1.2rem + 0.390625vw);
+}
+
+.card h3 {
+    color: var(--off-white);
+    font-family: var(--overpass);
+    font-size: calc(1.05rem + 0.390625vw);
+}
+
+.card-read-status {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    width: 30%;
+    height: 40px;
+    font-size: calc(14px + 0.390625vw);
+    font-family: var(--barlow);
+}
+
+.card-read-status.read {
+    background: rgb(36, 214, 75);
+    color: black;
+}
+
+.card-read-status.not-read {
+    background: rgb(211, 27, 27);
+    color: white;
+}
+
+.delete-card {
+    padding: 5px 10px;
+    width: 25%;
 }
 
 /* ===== FORM/MODAL ===== */
@@ -294,7 +334,6 @@ form {
     color: var(--dark-blue);
     padding: 8px 10px 5px 10px;
     font-size: calc(1.15rem + 0.390625vw);
-    cursor: pointer;
     font-family: var(--overpass);
     border: none;
     border-radius: 3px;
@@ -379,7 +418,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4vh;
+    height: 3vh;
     width: 100%;
     padding: 4px 0;
 }
