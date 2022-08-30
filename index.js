@@ -11,7 +11,6 @@ const overlay = document.getElementById('overlay');
 openForm.addEventListener('click', showForm);
 overlay.addEventListener('click', hideForm);
 confirmBook.addEventListener('click', getUserInput);
-confirmBook.addEventListener('click', formCompletion)
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -82,7 +81,7 @@ function getUserInput() {
         createCard(newBook);
 
         bookForm.reset();
-        hideForm();
+        formCompletion();
 
         updateLibrary();
     }
@@ -159,10 +158,14 @@ function showForm() {
 
 function formCompletion() {
     hideForm();
-    formComplete.classList.add('show')
+
+    setTimeout(() => {
+        formComplete.classList.add('show')
+    }, 250)
+
     setTimeout(() => {
         formComplete.classList.remove('show')
-    }, 4000);
+    }, 4500);
 }
 
 function hideForm() {
