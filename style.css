@@ -446,7 +446,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3vh;
+    height: 4vh;
     width: 100%;
     padding: 4px 0;
 }
@@ -472,7 +472,7 @@ footer i {
     z-index: 0;
     color: var(--purple);
     transition: 0.4s ease;
-    padding: 3px 6px;
+    padding: 2px 4px;
 }
 
 .my-name:hover {
