@@ -259,7 +259,7 @@ footer i {
 .modal.show {
     visibility: visible;
     transform: scale(1);
-    top: 20%;
+    top: 20vh;
 }
 
 .modal h2 {
@@ -380,6 +380,34 @@ form {
 
 .confirm-book:hover::after {
     width: 135%;
+}
+
+/* ===== FORM COMPLETION MESSAGE ===== */
+.form-complete {
+    position: fixed;
+    top: 30vh;
+    background: rgb(0, 0, 0, 0.7);
+    height: 200px;
+    width: 400px;
+    border-radius: 5px;
+    z-index: 1;
+    visibility: hidden;
+    transition: 1.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-complete h2 {
+    text-align: center;
+    color: var(--off-white);
+    font-family: var(--barlow);
+}
+
+.form-complete.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* ===== OVERLAY ===== */
