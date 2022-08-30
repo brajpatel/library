@@ -62,7 +62,7 @@ function createFillerBook() {
 
     updateLibrary();
 };
-
+createFillerBook();
 createFillerBook();
 
 function getUserInput() {
