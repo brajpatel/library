@@ -546,12 +546,20 @@ footer i {
     .nav-right h2 {
         display: none;
     }
+}
 
+@media (max-width: 730px) {
     .book-area {
         grid-template-columns: 1fr;
     }
 
     .card {
-        width: 65%;
+        width: 50%;
+    }
+}
+
+@media (max-width: 690px) {
+    .card {
+        width: 70%;
     }
 }
