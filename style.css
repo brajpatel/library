@@ -174,62 +174,6 @@ h1 {
     /* STYLE MEEEEEEEEEEEEEEEEEEE */
 }
 
-/* ===== FOOTER ===== */
-footer {
-    position: fixed;
-    bottom: 0;
-    background: var(--dark-blue);
-    box-shadow: 0 0 6px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4vh;
-    width: 100%;
-    padding: 4px 0;
-}
-
-footer p {
-    color: white;
-}
-
-footer p,
-footer a {
-    font-family: var(--overpass);
-    font-size: calc(14px + 0.390625vw);
-}
-
-footer i {
-    opacity: 0;
-    transition: 0.4s ease;
-    font-size: calc(15px + 0.390625vw);
-}
-
-.my-name {
-    position: relative;
-    z-index: 0;
-}
-
-.my-name::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: var(--neon-green);
-    height: 2px;
-    width: 0;
-    z-index: -1;
-    transition: 0.4s ease;
-}
-
-.my-name:hover::after {
-    width: 100%;
-}
-
-.my-name:hover ~ i {
-    opacity: 1;
-    transform: translateX(6px);
-}
-
 /* ===== FORM/MODAL ===== */
 .container {
     display: flex;
@@ -244,7 +188,7 @@ footer i {
     height: 520px;
     width: 400px;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 2;
     visibility: hidden;
     transition: 0.65s ease;
     border: 2px solid var(--neon-green);
@@ -386,17 +330,18 @@ form {
 .form-complete {
     position: fixed;
     top: 30vh;
-    background: rgb(0, 0, 0, 0.7);
+    background: rgb(0, 0, 0, 0.8);
     height: 200px;
     width: 400px;
     border-radius: 5px;
     z-index: 1;
     visibility: hidden;
-    transition: 1.2s ease;
+    transition: 0.6s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
 
 .form-complete h2 {
@@ -423,6 +368,62 @@ form {
 
 .overlay.show {
     visibility: visible;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: var(--dark-blue);
+    box-shadow: 0 0 6px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    width: 100%;
+    padding: 4px 0;
+}
+
+footer p {
+    color: white;
+}
+
+footer p,
+footer a {
+    font-family: var(--overpass);
+    font-size: calc(14px + 0.390625vw);
+}
+
+footer i {
+    opacity: 0;
+    transition: 0.4s ease;
+    font-size: calc(15px + 0.390625vw);
+}
+
+.my-name {
+    position: relative;
+    z-index: 0;
+}
+
+.my-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--neon-green);
+    height: 2px;
+    width: 0;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.my-name:hover::after {
+    width: 100%;
+}
+
+.my-name:hover ~ i {
+    opacity: 1;
+    transform: translateX(6px);
 }
 
 /* ===== MEDIA QUERIES ===== */
