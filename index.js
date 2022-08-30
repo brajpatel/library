@@ -161,7 +161,7 @@ function formCompletion() {
 
     setTimeout(() => {
         formComplete.classList.add('show')
-    }, 250)
+    }, 200)
 
     setTimeout(() => {
         formComplete.classList.remove('show')
