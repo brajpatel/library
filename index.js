@@ -3,13 +3,15 @@ const librarySize = document.getElementById('library-size');
 const bookArea = document.getElementById('book-area');
 const openForm = document.getElementById('open-form');
 const modal = document.getElementById('modal');
-const bookForm = document.getElementById('book-form')
-const confirmBook = document.getElementById('confirm-book')
+const bookForm = document.getElementById('book-form');
+const confirmBook = document.getElementById('confirm-book');
+const formComplete = document.getElementById('form-complete');
 const overlay = document.getElementById('overlay');
 
 openForm.addEventListener('click', showForm);
 overlay.addEventListener('click', hideForm);
 confirmBook.addEventListener('click', getUserInput);
+confirmBook.addEventListener('click', formCompletion)
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -80,6 +82,7 @@ function getUserInput() {
         createCard(newBook);
 
         bookForm.reset();
+        hideForm();
 
         updateLibrary();
     }
@@ -152,6 +155,14 @@ function updateLibrary() {
 function showForm() {
     modal.classList.add('show');
     overlay.classList.add('show');
+}
+
+function formCompletion() {
+    hideForm();
+    formComplete.classList.add('show')
+    setTimeout(() => {
+        formComplete.classList.remove('show')
+    }, 4000);
 }
 
 function hideForm() {
