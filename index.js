@@ -100,23 +100,29 @@ function createCard(book) {
     cardReadStatus.classList.add('card-read-status')
     deleteCard.classList.add('delete-card')
     
-    cardTitle.textContent = book.title;
+    cardTitle.textContent = "\'" + book.title + "\'";
     cardAuthor.textContent = book.author;
     cardPages.textContent = book.pages + ' pages';
     if(book.status) {
         cardReadStatus.textContent = 'Read'
+        cardReadStatus.classList.add('read')
     }
     else {
         cardReadStatus.textContent = 'Not read'
+        cardReadStatus.classList.add('not-read')
     }
     deleteCard.textContent = 'Remove Book'
 
     cardReadStatus.addEventListener('click', () => {
         if(cardReadStatus.textContent === 'Read') {
             cardReadStatus.textContent = 'Not Read'
+            cardReadStatus.classList.add('not-read')
+            cardReadStatus.classList.remove('read')
         }
         else {
             cardReadStatus.textContent = 'Read'
+            cardReadStatus.classList.add('read')
+            cardReadStatus.classList.remove('not-read')
         }
     })
 
