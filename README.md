@@ -3,7 +3,7 @@
 ![preview-image-2](https://github.com/brajpatel/library/blob/main/images/preview-image2.png)
 ![preview-image-3](https://github.com/brajpatel/library/blob/main/images/preview-image3.png)
 ## About
-A small library app created (using HTML, CSS and JavaScript) as the third project of The Odin Project's [JavaScript course](https://www.theodinproject.com/lessons/node-path-javascript-library). You can open and complete a simple form to add books to the library. Each book displays the title, author, number of pages, whether the user has read the book or not and can be removed individually. The number of books in the library is displayed in the nav bar.
+A small library app created (using HTML, CSS and JavaScript) as the third project of The Odin Project's [Full Stack JavaScript] course(https://www.theodinproject.com/lessons/node-path-javascript-library). You can open and complete a simple form to add books to the library. Each book displays the title, author, number of pages, whether the user has read the book or not and can be removed individually. The number of books in the library is displayed in the nav bar.
 <br/><br/>
 These are some of the challenges I faced while making this project:
 - Getting the user's form input values and displaying them cleanly on an element
