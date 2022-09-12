@@ -10,4 +10,4 @@ These are some of the challenges I faced while making this project:
 - Ensuring a new 'book' element could not be displayed until all form elements were completed
 - Displaying the number of 'book' elements in the library after they're added or removed
 ## View Project
-You can view the library live by clicking [here](https://brajpatel.github.io/library/)
+You can view the library live by clicking [here](https://brajpatel.github.io/library/).
