@@ -21,7 +21,7 @@ class Book {
     }
 }
 
-function createFillerBook() {
+(function() {
     let fillerBooks = [
         {
             title: 'Skulduggery Pleasant',
@@ -78,9 +78,7 @@ function createFillerBook() {
     createCard(fillerBook);
 
     updateLibrary();
-};
-createFillerBook();
-createFillerBook();
+})();
 
 function getUserInput() {
     const titleInput = document.getElementById('input-title').value;
