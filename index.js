@@ -162,7 +162,7 @@ function removeBookFromLibrary(book, bookTitle) {
     bookArea.removeChild(book);
     
     let index = library.indexOf(library.find(book => book.title === bookTitle));
-    library.splice(index - 1, 1);
+    library.splice(index, 1);
 
     updateLibrary();
 }
