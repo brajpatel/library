@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/048208056e.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.nicepng.com/png/full/246-2462520_cloud-library-design.png">
-    <link rel="stylesheet" href="style.css">
-    <title>Library</title>
-</head>
-<body>
+function initialisePage() {
+    const body = document.querySelector('body');
+    const content = document.getElementById('content');
 
-    <!-- NAVBAR -->
-    <nav>
+    const nav = document.createElement('nav');
+    nav.innerHTML = `
         <div class="nav-left">
             <div class="filler-logo">
                 <a target="_blank" href="https://github.com/brajpatel"><i class="fa-solid fa-book"></i></a>
@@ -24,18 +15,20 @@
             <h2>Library Size: <span id="library-size"></span> books</h2>
             <button id="open-form" class="open-form"><i class="fa-solid fa-plus"></i>Add Book</button>
         </div>
-    </nav>
+    `;
 
-    <!-- BOOK AREA -->
-    <div id="book-area" class="book-area"></div>
+    const bookArea = document.createElement('div');
+    bookArea.setAttribute('id', 'book-area');
+    bookArea.classList.add('book-area');
 
-    <!-- FOOTER -->
-    <footer>
+    const footer = document.createElement('footer');
+    footer.innerHTML = `
         <p>Made by <a class="my-name" target="_blank" href="https://github.com/brajpatel">Brajesh</a><i class="fa-solid fa-user-ninja"></i></p>
-    </footer>
-    
-    <!-- MODAL & OVERLAY -->
-    <div class="container">
+    `;
+
+    const container = document.createElement('div');
+    container.classList.add('container');
+    container.innerHTML = `
         <div id="modal" class="modal">
             <h2>Enter book details</h2>
             <form id="book-form" action="#">
@@ -43,17 +36,17 @@
                     <input id="input-title" name="input_title" type="text" required>
                     <label for="input-title">Title</label>
                 </div>
-    
+
                 <div class="input-container">
                     <input id="input-author" name="input_author" type="text" required>
                     <label for="input-author">Author</label>
                 </div>
-    
+
                 <div class="input-container">
                     <input id="input-pages" name="input_pages" type="number" min="1" required>
                     <label for="input-pages">No. of Pages</label>
                 </div>
-    
+
                 <div class="last-input-container">
                     <input id="read-status" name="read_status" type="checkbox">
                     <label for="read-status">Read this book?</label>
@@ -67,8 +60,12 @@
             <h2>Your book has successfully been added to the library!</h2>
         </div>
         <div id="overlay" class="overlay"></div>
-    </div>
+    `;
 
-<script src="./index.js"></script>
-</body>
-</html>
+    content.appendChild(nav);
+    content.appendChild(bookArea);
+    content.appendChild(footer);
+    content.appendChild(container);
+}
+
+export default initialisePage;

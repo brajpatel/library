@@ -1,3 +1,6 @@
+import initialisePage from './page';
+initialisePage();
+
 let library = [];
 const librarySize = document.getElementById('library-size');
 const bookArea = document.getElementById('book-area');
@@ -66,7 +69,6 @@ class Book {
     ];
 
     let index = Math.floor(Math.random() * fillerBooks.length);
-    console.log(index)
     let randomTitle = fillerBooks[index].title;
     let randomAuthor = fillerBooks[index].author;
     let randomPages = fillerBooks[index].pages;
@@ -194,3 +196,23 @@ function hideForm() {
     overlay.classList.remove('show');
     bookForm.reset();
 }
+
+// SET UP FIREBASE BACKEND
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA9C1atjGvg3tg9UDXaXdAUYbGuxPHNVdg",
+  authDomain: "library-3f83b.firebaseapp.com",
+  projectId: "library-3f83b",
+  storageBucket: "library-3f83b.appspot.com",
+  messagingSenderId: "19305833496",
+  appId: "1:19305833496:web:9435c3f9af9f44be2d4f6d"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
