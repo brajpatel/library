@@ -99,27 +99,27 @@ function getUserInput() {
 
         bookForm.reset();
         formCompletion();
-
         updateLibrary();
     }
 }
 
 function createCard(book) {
     let card = document.createElement('div');
-    let cardTitle = document.createElement('h2');
-    let cardAuthor = document.createElement('h3');
-    let cardPages = document.createElement('h3');
-    let cardReadStatus = document.createElement('button');
-    let deleteCard = document.createElement('button');
-
     card.classList.add('card')
-    cardTitle.classList.add('card-title')
-    cardReadStatus.classList.add('card-read-status')
-    deleteCard.classList.add('delete-card')
     
+    let cardTitle = document.createElement('h2');
+    cardTitle.classList.add('card-title');
     cardTitle.textContent = "\'" + book.title + "\'";
+    
+    let cardAuthor = document.createElement('h3');
     cardAuthor.textContent = book.author;
+    
+    let cardPages = document.createElement('h3');
     cardPages.textContent = book.pages + ' pages';
+    
+    let cardReadStatus = document.createElement('button');
+    cardReadStatus.classList.add('card-read-status');
+   
     if(book.status) {
         cardReadStatus.textContent = 'Read'
         cardReadStatus.classList.add('read')
@@ -128,8 +128,7 @@ function createCard(book) {
         cardReadStatus.textContent = 'Not read'
         cardReadStatus.classList.add('not-read')
     }
-    deleteCard.textContent = 'Remove'
-
+    
     cardReadStatus.addEventListener('click', () => {
         if(cardReadStatus.textContent === 'Read') {
             cardReadStatus.textContent = 'Not Read'
@@ -143,9 +142,12 @@ function createCard(book) {
         }
     })
 
+    let deleteCard = document.createElement('button');
+    deleteCard.classList.add('delete-card');
+    deleteCard.textContent = 'Remove';
     deleteCard.addEventListener('click', () => {
         removeBookFromLibrary(card, cardTitle);
-    })
+    });
 
     card.appendChild(cardTitle);
     card.appendChild(cardAuthor);
